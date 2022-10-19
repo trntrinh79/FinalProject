@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,16 +22,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv;
     public static int height;
     public static int width;
-    private Button btnStart;
-    private Button btnAccount;
-    private Button btnHighScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getHeightAndWidth();
 
-        Button btnStart = (Button) findViewById(R.id.btnStart);
+        ImageView btnStart = (ImageView) findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,22 +40,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button btnAccount =  (Button) findViewById(R.id.btnAccount);
-        btnAccount.setOnClickListener(new View.OnClickListener() {
+        ImageView btnLeaderboard =  (ImageView) findViewById(R.id.btnLeaderBoard);
+        btnLeaderboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UserActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
 
             }
         });
 
 
-        Button btnClose =  (Button) findViewById(R.id.btnExit);
-        btnClose.setOnClickListener(new View.OnClickListener() {
+        ImageView btnAccount =  (ImageView) findViewById(R.id.btnConfirmUser);
+        btnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(MainActivity.this,UserActivity.class);
+                startActivity(intent);
 
             }
         });

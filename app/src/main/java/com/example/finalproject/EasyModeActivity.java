@@ -46,12 +46,12 @@ public class EasyModeActivity extends AppCompatActivity {
         scoreLabel = findViewById(R.id.scoreLabel);
 
 
-        TextView mTextField = (TextView) findViewById(R.id.mTextField);
+        TextView mTextField = (TextView) findViewById(R.id.time_bar_text);
 
         new CountDownTimer(100000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                mTextField.setText("Seconds remaining: " + millisUntilFinished / 1000);
+                mTextField.setText("" + millisUntilFinished / 1000);
             }
 
             public void onFinish() {
